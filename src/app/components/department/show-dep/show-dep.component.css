@@ -4,8 +4,13 @@
     align-items: center;
     margin: auto;
 max-width: 1100px;
-margin-top: 50px;
+margin-top: 25px;
 }
 table {
     width: 95%;
+}
+.wtf {
+    position: relative;
+    left: 1040px;
+    top: 25px;
 }
