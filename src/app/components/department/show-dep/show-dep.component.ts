@@ -41,12 +41,11 @@ export class ShowDepComponent implements OnInit {
     this.ActivateAddEditDepComp=true;
   }
 
-  deleteClick(id:any){
+  deleteClick(item: { DepartmentId: any; }){
     if(confirm('Are you sure??')){
-      this.service.deleteDepartment(id).subscribe(data=>{
+      this.service.deleteDepartment(item.DepartmentId).subscribe(data=>{
         alert(data.toString());
         this.refreshDepList();
-        console.log(data);
       })
     }
   }
@@ -68,7 +67,7 @@ export class ShowDepComponent implements OnInit {
     var DepartmentIdFilter = this.DepartmentIdFilter;
     var DepartmentNameFilter = this.DepartmentNameFilter;
 
-    this.DepartmentList = this.DepartmentListWithoutFilter.filter(function (el:any){
+    this.DepartmentList = this.DepartmentListWithoutFilter.filter(function (el: { DepartmentId: { toString: () => string; }; DepartmentName: { toString: () => string; }; }){
         return el.DepartmentId.toString().toLowerCase().includes(
           DepartmentIdFilter.toString().trim().toLowerCase()
         )&&
@@ -78,6 +77,14 @@ export class ShowDepComponent implements OnInit {
     });
   }
 
-  
+  sortResult(prop: string | number,asc: any){
+    this.DepartmentList = this.DepartmentListWithoutFilter.sort(function(a: { [x: string]: number; },b: { [x: string]: number; }){
+      if(asc){
+          return (a[prop]>b[prop])?1 : ((a[prop]<b[prop]) ?-1 :0);
+      }else{
+        return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
+      }
+    })
+  }
 
 }

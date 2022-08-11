@@ -24,9 +24,8 @@ updateDepartment(val:any):Observable<any>
 }
 deleteDepartment(val:any):Observable<any> 
 {
-  return this.http.delete(this.ApiUrl+'/Department',val);
+  return this.http.delete(this.ApiUrl+'/Department/'+val);
 }
-
 
 
 getEmpList():Observable<any> 
