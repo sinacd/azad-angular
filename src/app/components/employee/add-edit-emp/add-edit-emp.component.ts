@@ -1,5 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
+import { Component, OnInit,Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-add-edit-emp',
@@ -14,42 +15,37 @@ export class AddEditEmpComponent implements OnInit {
   EmployeeId:string | undefined;
   EmployeeName:string | undefined;
   Department:string | undefined;
-  DateOfjoining:string | undefined;
-  PhotoFileName:string | undefined;
-  PhotoFilePath:string | undefined;
+  DateOfJoining:string | undefined;
+  PhotoFileName: string | undefined;
+  PhotoFilePath: string | undefined;
+
   DepartmentsList:any=[];
 
   ngOnInit(): void {
-   this.loadDepartmentList();
+    this.loadDepartmentList();
   }
-  loadDepartmentList()
-  {
-    this.service.getAllDepartmentName().subscribe((data:any)=>{
+
+  loadDepartmentList(){
+    this.service.getAllDepartmentNames().subscribe((data:any)=>{
       this.DepartmentsList=data;
-
+      
       this.EmployeeId=this.emp.EmployeeId;
-      this.EmployeeName=this.emp.Employeename;
+      this.EmployeeName=this.emp.EmployeeName;
       this.Department=this.emp.Department;
-      this.DateOfjoining=this.emp.DateOfjoining;
-      this.PhotoFileName=this.emp.PhotoFileName;
+      this.DateOfJoining=this.emp.DateOfJoining;
+      this.PhotoFileName=this.emp.photoFileName;
       this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
-
+      
     });
   }
 
-
-
-
-
   addEmployee(){
     var val = {EmployeeId:this.EmployeeId,
-      EmployeeName:this.EmployeeName,
-      Department: this.Department,
-      DateOfjoining: this.DateOfjoining,
-      PhotoFileName: this.PhotoFileName
-     
-  
-    };
+                EmployeeName:this.EmployeeName,
+                Department:this.Department,
+              DateOfJoining:this.DateOfJoining,
+            PhotoFileName:this.PhotoFileName};
+
     this.service.addEmployee(val).subscribe(res=>{
       alert(res.toString());
     });
@@ -58,33 +54,26 @@ export class AddEditEmpComponent implements OnInit {
   updateEmployee(){
     var val = {EmployeeId:this.EmployeeId,
       EmployeeName:this.EmployeeName,
-      Department: this.Department,
-      DateOfjoining: this.DateOfjoining,
-      PhotoFileName: this.PhotoFileName
-    
-    };
+      Department:this.Department,
+    DateOfJoining:this.DateOfJoining,
+  PhotoFileName:this.PhotoFileName};
+
     this.service.updateEmployee(val).subscribe(res=>{
     alert(res.toString());
     });
   }
-uploadPhoto(event:any)
-{
-var file=event.target.files[0];
-const formData:FormData=new FormData();
-formData.append('uploadedFile',file,file.name);
-this.service.uploadPhoto(formData).subscribe((data:any)=>{
-  this.PhotoFileName=data.toString();
-  this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
-})
 
 
+  uploadPhoto(event:any){
+    var file=event.target.files[0];
+    const formData:FormData=new FormData();
+    formData.append('uploadedFile',file,file.name);
 
-
-}
-
-
-
-
-
+    this.service.UploadPhoto(formData).subscribe((data:any)=>{
+      this.PhotoFileName=data.toString();
+      this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
+    })
+  }
 
 }
+

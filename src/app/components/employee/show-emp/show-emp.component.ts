@@ -30,7 +30,7 @@ export class ShowEmpComponent implements OnInit {
       EmployeeetName:"",
       Department:"",
       DateOfJoining:"",
-      PhotoFileName:"anonymous.png"
+      photoFileName:"anonymous.PNG"
     }
     this.ModalTitle="Add Employee";
     this.ActivateAddEditEmpComp=true;
@@ -61,7 +61,7 @@ export class ShowEmpComponent implements OnInit {
   refreshEmpList(){
     this.service.getEmpList().subscribe(data=>{
       this.EmployeeList=data;
-      console.log(data);
+   
       this.DepartmentListWithoutFilter=data;
     });
   }
