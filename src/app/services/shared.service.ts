@@ -9,6 +9,11 @@ import { Observable } from 'rxjs';
 export class SharedService {
 readonly ApiUrl="http://localhost:5000/api";
 readonly PhotoUrl="http://localhost:5000/Photos/";
+name:any;
+loginStat:any;
+ass(bass:any){
+  this.name= bass
+}
 constructor(private http:HttpClient) { }
 
 getDepList():Observable<any[]>{
@@ -29,28 +34,54 @@ deleteDepartment(val:any){
 
 
 getEmpList():Observable<any[]>{
-  return this.http.get<any>(this.ApiUrl+'/Employee');
+  return this.http.get<any>(this.ApiUrl+'/Teacher');
 }
 
 addEmployee(val:any){
-  return this.http.post(this.ApiUrl+'/Employee',val);
+  return this.http.post(this.ApiUrl+'/Teacher',val);
 }
 
 updateEmployee(val:any){
-  return this.http.put(this.ApiUrl+'/Employee',val);
+  return this.http.put(this.ApiUrl+'/Teacher',val);
 }
 
 deleteEmployee(val:any){
-  return this.http.delete(this.ApiUrl+'/Employee/'+val);
+  return this.http.delete(this.ApiUrl+'/Teacher/'+val);
 }
 
 
 UploadPhoto(val:any){
-  return this.http.post(this.ApiUrl+'/Employee/SaveFile',val);
+  return this.http.post(this.ApiUrl+'/Teacher/SaveFile',val);
 }
 
 getAllDepartmentNames():Observable<any[]>{
-  return this.http.get<any[]>(this.ApiUrl+'/Employee/GetAllDepartmentName');
+  return this.http.get<any[]>(this.ApiUrl+'/Teacher/GetAllDepartmentName');
 }
+getCorList():Observable<any[]>{
+  return this.http.get<any>(this.ApiUrl+'/Course');
+}
+addCourse(val:any){
+  return this.http.post(this.ApiUrl+'/Course',val);
+}
+
+updateCourse(val:any){
+  return this.http.put(this.ApiUrl+'/Course',val);
+}
+
+deleteCourse(val:any){
+  return this.http.delete(this.ApiUrl+'/Course/'+val);
+}
+
+
+UploadPhotoCourse(val:any){
+  return this.http.post(this.ApiUrl+'/Course/SaveFile',val);
+}
+
+getCourseById(val:any):Observable<any[]>{
+  return this.http.get<any[]>(this.ApiUrl+'/Course/'+val);
+}
+
+
+
 
 }

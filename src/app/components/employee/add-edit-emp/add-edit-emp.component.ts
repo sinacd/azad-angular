@@ -10,53 +10,74 @@ import { Component, OnInit,Input } from '@angular/core';
 export class AddEditEmpComponent implements OnInit {
 
   constructor(private service:SharedService) { }
+/* 
+ this.emp={
+      EmployeeId:0,
+      EmployeeetName:"",
+      Department:"",
+      DateOfJoining:"",
+      photoFileName:"anonymous.PNG"
+    }
+    this.ModalTitle="Add Employee";
+    this.ActivateAddEditEmpComp=true; */
 
   @Input() emp:any;
-  EmployeeId:string | undefined;
-  EmployeeName:string | undefined;
-  Department:string | undefined;
-  DateOfJoining:string | undefined;
-  PhotoFileName: string | undefined;
+  TeacherId:string='0';
+  TeacherName:string="";
+  TeacherPhone:string="";
+  TeacherPhotoFileName: string="anonymous.PNG";
+  TeacherEmail:string="";
+  TeacherPassword: string="";
   PhotoFilePath: string | undefined;
 
   DepartmentsList:any=[];
 
   ngOnInit(): void {
     this.loadDepartmentList();
+   
+    console.log(this.service.name);
   }
 
   loadDepartmentList(){
     this.service.getAllDepartmentNames().subscribe((data:any)=>{
       this.DepartmentsList=data;
       
-      this.EmployeeId=this.emp.EmployeeId;
-      this.EmployeeName=this.emp.EmployeeName;
-      this.Department=this.emp.Department;
-      this.DateOfJoining=this.emp.DateOfJoining;
-      this.PhotoFileName=this.emp.photoFileName;
-      this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
-      
+    /*   this.TeacherId=this.emp.TeacherId;
+      this.TeacherName=this.emp.TeacherName;
+      this.TeacherPhone=this.emp.TeacherPhone;
+      this.TeacherEmail=this.emp.TeacherEmail;
+      this.TeacherPassword=this.emp.TeacherPassword;
+      this.TeacherPhotoFileName=this.emp.TeacherPhotoFileName;
+      this.PhotoFilePath=this.service.PhotoUrl+this.TeacherPhotoFileName; */
+      console.log(this.TeacherName);
     });
   }
 
   addEmployee(){
-    var val = {EmployeeId:this.EmployeeId,
-                EmployeeName:this.EmployeeName,
-                Department:this.Department,
-              DateOfJoining:this.DateOfJoining,
-            PhotoFileName:this.PhotoFileName};
+    var val = {TeacherId:this.TeacherId,
+                TeacherName:this.TeacherName,
+                TeacherPhone:this.TeacherPhone,
+                TeacherEmail:this.TeacherEmail,
+                TeacherPassword:this.TeacherPassword,
+                TeacherPhotoFileName:this.TeacherPhotoFileName};
 
     this.service.addEmployee(val).subscribe(res=>{
       alert(res.toString());
     });
+    this.TeacherId='0';
+    this.TeacherName="";
+    this.TeacherPhone="";
+    this.TeacherEmail="";
+    this.TeacherPassword="";
   }
 
   updateEmployee(){
-    var val = {EmployeeId:this.EmployeeId,
-      EmployeeName:this.EmployeeName,
-      Department:this.Department,
-    DateOfJoining:this.DateOfJoining,
-  PhotoFileName:this.PhotoFileName};
+    var val = {TeacherId:this.TeacherId,
+      TeacherName:this.TeacherName,
+      TeacherPhone:this.TeacherPhone,
+      TeacherEmail:this.TeacherEmail,
+      TeacherPassword:this.TeacherPassword,
+      TeacherPhotoFileName:this.TeacherPhotoFileName};
 
     this.service.updateEmployee(val).subscribe(res=>{
     alert(res.toString());
@@ -70,8 +91,8 @@ export class AddEditEmpComponent implements OnInit {
     formData.append('uploadedFile',file,file.name);
 
     this.service.UploadPhoto(formData).subscribe((data:any)=>{
-      this.PhotoFileName=data.toString();
-      this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
+      this.TeacherPhotoFileName=data.toString();
+      this.PhotoFilePath=this.service.PhotoUrl+this.TeacherPhotoFileName;
     })
   }
 

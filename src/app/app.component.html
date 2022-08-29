@@ -1,26 +1,108 @@
-<div class="container">
-<h3 class="d-flex justify-content-center">angular10 web api sql server app demo</h3>
-<h5 class="d-flex justify-content">employee managment portal</h5>
-<nav class="navbar navbar-expand-sm bg-light navbar-dark">
-<ul class="navbar-nav">
-  <li class="nav-item">
-    <button routerLink="department"
-    class="m-1 btn btn-light btn-outline-primary" >Departments</button>
-  </li>
-  <li class="nav-item">
-    <button routerLink="employee"
-    class="m-1 btn btn-light btn-outline-primary" >Employees</button>
-  </li>
-
-
-</ul>
-
-
-</nav>
-
-
-
-
-
+<div class="nnavbar rtl cubeEffectFather">
+  <div class="container flex">
+    <div class="sec-center"> 	
+      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+      <label class="for-dropdown" for="dropdown"><i class="fa-solid fa-bars"></i> <i class="uil uil-arrow-down"></i></label>
+      <nav class=" section-dropdown">
+        <ul>
+            <li><a routerLink="">کافه کمان<i class="uil uil-arrow-right"></i></a></li>
+            <li><a href="page1.html">تهران غرب در یک نگاه<i class="uil uil-arrow-right"></i></a></li>
+            <li><a href=""> دوره‌های زمستانی ۱۴۰۰ کمان<i class="uil uil-arrow-right"></i></a></li>
+            
+            <li><a href=""> اخبار<i class="uil uil-arrow-right"></i></a></li>
+            <li><a href=""> اطلاعیه<i class="uil uil-arrow-right"></i></a></li>
+            <li><a routerLink="login">  ورود <i class="uil uil-arrow-right"></i></a></li>
+            <li><a routerLink="signup">  همکاری در کمان <i class="uil uil-arrow-right"></i></a></li>
+            
+        </ul>
+    </nav>
+    </div>
+      
+    
+     
+      
+      <nav class="cubeEffect ">
+          <ul>
+              <li><a routerLink="">کافه کمان</a></li>
+              <li><a href="page1.html">تهران غرب در یک نگاه</a></li>
+              <li><a href=""> دوره‌های زمستانی ۱۴۰۰ کمان</a></li>
+           
+              <li><a href=""> اخبار</a></li>
+              <li><a href="">اطلاعیه</a></li>
+              <li><a routerLink="login">   ورود  </a></li>
+              <li><a routerLink="signup">   همکاری در کمان  </a></li>
+              
+          </ul>
+      </nav>
+      <div class="search-bar">
+          <a href="">
+           <i class="fas fa-search fa-1x"></i>
+           </a>
+          <div class="atooltip">
+           <input type="text" name="search" placeholder="">
+          </div>
+       </div>
+      
+  </div>
 </div>
-<router-outlet></router-outlet>
+<!-- 
+  <div id="blackbar" ></div>  
+  better use a before for slider -->
+  
+  
+  <section class="blaknav rtl cubeEffectFather">
+    <div class="grid">
+      
+      <img src="../assets/Resources/1601963149-logo-azad.webp" alt="">
+      
+              
+    </div>
+  </section> 
+  <router-outlet></router-outlet>
+  <footer class="footer bg-dark ">
+    <div class="container grid grid-4">
+        <div>
+           <a href="">	دوره‌ ی آمادگی آزمون IELTS</a>
+           <a href="">	دوره‌ی بحث آزاد ( Free Discussion )</a>
+           <a href="">	دوره‌ی بلاک چین و ورود به بازار رمزارزهای دیجیتال</a>
+           <a href="">	دوره‌ی آموزش زبان روسی</a>
+           <a href="">	دوره‌ی آموزش زبان ترکی استانبولی</a>
+           <a href="">	دوره‌ی طراحی سایت فروشگاهی با وردپرس (بدون نیاز به دانش برنامه نویسی)</a>
+           <a href="">	دوره‌ی مبانی بلاک چین و برنامه نویسی بر بستر اتریوم</a>
+           <a href="">	دوره‌ی اصول طراحی واسط کاربر (UI/UX)</a>
+           <a href="">	دوره‌ی ترکیبی طراحی اپلیکیشن تحت وب با PHP, Angular, SQL</a>
+           <a href="">	دوره‌ی اصول کدنویسی تمیز از تازه کار به حرفه ای</a>
+        </div>
+        <div>
+          <a href="">	دوره‌ی اصول طراحی واسط کاربر (UI/UX)</a>
+           <a href="">	دوره‌ی ترکیبی طراحی اپلیکیشن تحت وب با PHP, Angular, SQL</a>
+           <a href="">	دوره‌ی اصول کدنویسی تمیز از تازه کار به حرفه ای</a>
+          <a href="">	دوره‌های زمستانی ۱۴۰۰ کمان</a>
+          <a href="">	همکاری با کمان</a>
+          <a href="">	تماس با ما</a>
+          <a href="">	تلگرام کافه کمان</a>
+          <a href="">	شماره واتساپ کمان</a>
+      
+          <!--   <a href=""></a>
+          <a href=""></a>
+          <a href=""></a> -->
+       </div>
+        <div class="map">
+          </div> </div> 
+                  <!-- --------------------------------- -->
+     <div class="social-detail rtl">
+     
+  </div>
+  
+  
+  
+  <!-- copy right -->
+  <div class="copy-right rtl">
+    <div>
+
+      <i class="fa fa-copyright" ></i>
+      کلیه حقوق متعلق به واحد تهران غرب می‌باشد. طراحی وب سایت : ACA.CO
+    </div>
+    </div>
+
+        </footer>

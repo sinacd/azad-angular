@@ -1,110 +1,222 @@
+<div class="container rtl">
+  <div class="banner ">
+    <div class="title-bar"> <a href="">صفحه‌اصلی</a>/ دوره های زمستانی کمان 1400</div>
+  <div class="title">
+    <h2>دوره‌های زمستانی ۱۴۰۰ کمان</h2>
+    <div>
+      <a href="">
+        <i class="fab fa-telegram" ></i>
+        
+      </a>
+      <a href="">
 
-<!-- Button trigger modal -->
-<button type="button" class=" wtf btn btn-primary float-right m-2" 
-data-toggle="modal" data-target="#exampleModal"
-(click)="addClick()"
-data-backdrop="static" data-keyboard="false"
->
-    Add Employee
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
-          <button type="button" class="close" 
-          data-dismiss="modal" aria-label="Close"
-          (click)="closeClick()" >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <app-add-edit-emp [emp]="emp" *ngIf="ActivateAddEditEmpComp">
-            </app-add-edit-emp>
-        </div>
-      </div>
+        <i class="fa fa-print" aria-hidden="true"></i>
+      </a>
+      
     </div>
   </div>
+  <img src="assets/Resources/kamanbaner28603-kaman-logo-withsocialaddrersses.webp" alt="">
+</div>
+</div>
 
 
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-              <div class="d-flex flex-row">
-                <input [(ngModel)]="DepartmentIdFilter" class="form-control"
-                (keyup)="FilterFn()" placeholder="Filter">
 
-                <button type="button" class="btn btn-light"
-                >
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
-                </svg>
-              </button>
-              <button type="button" class="btn btn-light"
-              >
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
-                </svg>
-              </button>
 
-              </div>
-              
-              EmployeeId</th>
-            <th>
-              <div class="d-flex flex-row">
-                <input [(ngModel)]="DepartmentNameFilter" class="form-control"
-                (keyup)="FilterFn()" placeholder="Filter">
 
-                <button type="button" class="btn btn-light"
-                >
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
-                </svg>
-              </button>
-              <button type="button" class="btn btn-light"
-               >
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
-                </svg>
-              </button>
 
-              </div>
-            EmployeeName</th>
-           
-            <th>Department</th>
-            <th>DateOfJoining</th>
-            <th>Options</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dataItem of EmployeeList">
-            <td>{{dataItem.EmployeeId}}</td>
-            <td>{{dataItem.EmployeeName}}</td>
-            <td>{{dataItem.Department}}</td>
-            <td>{{dataItem.DateOfJoining}}</td>
-            <td>
-                <button type="button" class="btn btn-light mr-1"
-                data-toggle="modal" data-target="#exampleModal"
-(click)="editClick(dataItem)"
-data-backdrop="static" data-keyboard="false"
-                >
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                </svg>
-                </button>
-                <button type="button" class="btn btn-light mr-1"
-                (click)="deleteClick(dataItem)"
-                >
-                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
-                  </svg>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--manual navigation end-->
+<section class="courses">
+<div class="container">
+  <div class="course grid " *ngFor="let dataItem of CourseList">
+    <div class="text rtl">
+    <img [src]="PhotoFilePath+dataItem.CoursePhotoFileName" alt="ss">
+    <h3 class="title-cl ">  {{dataItem.CourseName}} </h3>
+    <div class="title-cl2 t16"><span class="text-cl t16">مدرس </span>مهندس سهراب عسکرزاده</div>
+  
+    <p class="text-cl ">{{dataItem.CourseDescription}}</p>
+    <h3 class="text-cl">
+
+      برای ثبت نام دوره <a href="page1-2.html" class="title-cl2">اینجا</a> کلیک کنید.
+      </h3>
+      
+  </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+<div class="course grid ">
+<div class="text rtl">
+<img src="assets/Resources/kamanfirst-sohrabzadehposter2.webp" alt="">
+<h3 class="title-cl ">دوره‌ی اصول کدنویسی تمیز از تازه کار به حرفه‌ای</h3>
+<div class="title-cl2 t16"><span class="text-cl t16">مدرس </span>مهندس سهراب عسکرزاده</div>
+<div>
+<h3 class="text-cl">
+
+۴ جلسه آنلاین
+</h3>
+<h3 class="text-cl">
+
+سه‌شنبه و جمعه ۷ بعد از ظهر
+</h3>
+<h3 class="text-cl">
+
+برای ثبت نام دوره <a href="page1-2.html" class="title-cl2">اینجا</a> کلیک کنید.
+</h3>
+
+</div>
+<h3 class="title-cl2">چرا کد نویسی تمیز؟</h3>
+<p class="text-cl">چو ن ما و شما تنبل تر از آن هستیم که دردسرِ کدهای کثیف را تحمل کنیم! چون نمی‌خواهیم اخراج شویم! چون نمی‌خواهیم همکارانمان را جان به لب کنیم! چون خواندن کد سخت‌تر از نوشتن آن است!</p>
+<h3 class="title-cl2">سرفصل‌های دوره:</h3>
+<h3 class="text-cl">در این دوره با سرفصل‌های مهمی از جمله:</h3>
+<p class="text-cl ">مرزبندی ابزارهای برنامه نویسی، کدهای خود مستند، اصول در، اصول حرفه‌ای استفاده از عملگرها، اصول مقایسه آبجکت‌ها، اصول متدنویسی حرفه‌ای، Fail-safe کردن، تکنیک دور زدن Duplication ، نام گذاری‌ها، تکنیک تشخیص متدهای مشکل دار، انواع خطا از منظر حاد بودن، تکنیک‌های هندل تمیز خطاهای نرم افزاری، اصول ساخت کلاس‌ها، تکنیک Clean سازی کلاس‌های پیچیده، اصل Cohesion ، اصول کامنت گذاری، آلترناتیو‌ها، ریفکتور با هدف حذف کامنت، تشخیص زمان ریفکتور، تحلیل کد دیگران، اینک چه زمانی نباید از متدها استفاده کنیم، رواج کلین کد در تیم‌ها و چندین مورد دیگه آشنا شده و در کنار هم به برنامه‌نویسی بهتر تبدیل خواهیم شد.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="course grid ">
+<div class="text rtl">
+<img src="assets/Resources/kamansecond39849-freediscussion.webp" alt="">
+<h3 class="title-cl ">دوره‌ی بحث آزاد ( Free Discussion ) به زبان انگلیسی</h3>
+<div class="title-cl2 t16"><span class="text-cl t16">مدرس </span>جناب آقای ابوالفضل مصور</div>
+<div>
+<h3 class="text-cl">
+
+۱۰ جلسه آنلاین
+</h3>
+<h3 class="text-cl">
+
+مدت زمان هر جلسه یک ساعت و نیم (۱:۳۰)
+</h3>
+<h3 class="text-cl">
+
+دو جلسه در هفته: یک جلسه جمعه ساعت ۱۳ و جلسه دوم یک روز از هفته با توافق و با توجه به درخواستهای بیشتر دانشجویان هماهنگ خواهد شد.
+</h3>
+
+<h3 class="text-cl">
+
+برای ثبت نام دوره <a href="page1-2.html" class="title-cl2">اینجا</a> کلیک کنید.
+</h3>
+
+</div>
+<h3 class="title-cl2">در این دوره شما مهارت:</h3>
+<p class="text-cl">استفاده از تاپیک های روانشناختی و اجتماعی هدفمند جهت آمادگی برای شرکت در امتحاناتی از قبیل IELTS , TOEFL , DUOLINGO و … را فرا می‌گیرید.</p>
+<h3 class="text-cl">درباره کلاس‌های بحث آزاد انگلیسی (Free Discussion)</h3>
+<p class="text-cl ">کلاس‌های بحث آزاد به طور مستقیم بر روی توانایی‌های سخن گفتن و شنیدن کار می‌کند و به طور غیر مستقیم بر روی نوشتن و خواندن مؤثر است. ایراد‌های تلفظ و دستور زبان در کلاس گرفته می‌شود. تلفظ کلمات به استاندارد آمریکایی ( General American Dialect ) تبدیل خواهد شد. دلیل آن این است که اغلب اصطلاحات امروزی و کاربردی در آمریکا تدریس می‌شوند. برخی از جلسات با حضور میهمان خارجی برگزار می‌شود.</p>
+<h3 class="title-cl2">این دوره برای تمامی سطوح از مبتدی تا اساتید دانشگاه مناسب است.</h3>
+<p class="text-cl ">کلاس‌های بحث آزاد جزو پر مخاطب ترین کلاس‌های جانبی برای تقویت زبان انگلیسی، مخصوصاً مهارت اسپیکینگ Speaking است. به دلیل اهمیت بالای قدرت مکالمه در روند یادگیری زبان انگلیسی، کلاس‌های فری دیسکاشن، کلاس‌های مکالمه محوری هستند که به غیر از تقویت مهارت گفتاری به جنبه‌های دیگر یادگیری زبان انگلیسی از جمله دایره لغات Vocabulary، گرامر Grammar، اصطلاحات Expressions و Idioms پرداخته خواهد شد.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="course grid ">
+<div class="text rtl">
+<img src="assets/Resources/kamanthird315-ielts-farhadfar.webp" alt="">
+<h3 class="title-cl ">دوره‌ی آمادگی آزمون IELTS</h3>
+<div class="title-cl2 t16"><span class="text-cl t16">مدرس </span> دکتر زاهدی</div>
+<div>
+<h3 class="text-cl">
+
+دکترای ادبیات زبان انگلیسی از دانشگاه تهران
+با بیش از ۴۰ سال تجربه موفق در آموزش زبان انگلیسی
+</h3>
+<h3 class="text-cl">
+
+۲۰ جلسه آنلاین
+</h3>
+<h3 class="text-cl">
+
+مدت زمان هر جلسه یک ساعت و نیم (۱:۳۰)
+</h3>
+<h3 class="text-cl">
+
+برای ثبت نام دوره <a href="page1-2.html" class="title-cl2">اینجا</a> کلیک کنید.
+</h3>
+
+</div>
+<h3 class="title-cl2"></h3>
+<p class="text-cl">آیلتس (IELTS) مخفف International English Language Testing System یا سامانه بین‌المللی آزمون زبان انگلیسی است. آیلتس آزمونی به روش بریتانیایی در مقابل آزمون آمریکایی تافل برای سنجش زبان انگلیسی داوطلبینی است که می‌خواهند برای درس خواندن، کار و یا مهاجرت به کشورهای انگلیسی‌زبان بروند. از این رو، آزمون آیتلس به دو صورت دانشگاهی (Academic) و عمومی(General) برگزار می‌شود.
+آزمون آیلتس شامل ۴ بخش شنیدار، خواندن، نوشتن و مکالمه است. نمره هر بخش بین ۰ تا ۹ است. نمره نهایی آیلتس، میانگین نمرات این ۴ بخش است. نمره ۵، نمره متوسط و ۶ به بالا خوب تلقی می‌شود. شرط پذیرش در بسیاری از دانشگاه‌های کانادا، انگلستان، استرالیا، نیوزیلند و آمریکا، کسب نمره کلی ۵/‏۶ به بالا است به طوری که نمره هر بخش هم از ۶ کمتر نباشد.
+</p>
+<h3 class="title-cl2"></h3>
+<h3 class="text-cl"></h3>
+<p class="text-cl ">شرکت در دوره فشرده آمادگی آزمون IELTS کمان هر چهار مهارت اصلی صحبت کردن (Speaking)، گوش کردن (Listening)، خواندن (Reading) و نوشتن (Writing) شما را به سطح مطلوبی خواهد رساند. با شرکت در دوره فشرده آمادگی آزمون IELTS کمان، در ۲۰ جلسه (۳۰‬ ساعت) آنلاین، تکنیک‌ها و نکات هر ۴ مهارت آزمون IELTS را می‌آموزید، مهارت‌های لازم در نحوه‌ی امتحان دادن در آزمون IELTS را فرا می‌گیرید و در نهایت،‬ نمره نهایی‬ آزمون IELTS شما به طور متوسط تا ۵/‏۱ نمره و در صورت‬ تلاش‬ همه‬ جانبه تا ۵/‏۲ نمره نیز افزایش خواهد یافت.</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>

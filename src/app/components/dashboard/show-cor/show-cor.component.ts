@@ -1,78 +1,87 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
-
 @Component({
-  selector: 'app-show-emp',
-  templateUrl: './show-emp.component.html',
-  styleUrls: ['./show-emp.component.css']
+  selector: 'app-show-cor',
+  templateUrl: './show-cor.component.html',
+  styleUrls: ['./show-cor.component.css']
 })
-export class ShowEmpComponent implements OnInit {
+export class ShowCorComponent implements OnInit {
 
   constructor(private service:SharedService) { }
 
+ 
   CourseList:any=[];
-  PhotoFilePath: string | undefined;
+
+  CourseId?: string
+  CourseName?: string
+  CoursePrice?: string
+ CoursePhotoFileName?: string
+ CourseDescription?: string
+ CourseAuthorId?: string
+
+
+
+  
+  
   ModalTitle:string | undefined;
-  ActivateAddEditEmpComp:boolean=false;
-  emp:any;
+  ActivateAddEditCorComp:boolean=false;
+  cor:any;
 
   DepartmentIdFilter:string="";
   DepartmentNameFilter:string="";
   DepartmentListWithoutFilter:any=[];
 
   ngOnInit(): void {
-    this.refreshEmpList(); 
-    
+ /*    this.CourseAuthorId=this.corauth.CourseAuthorId; */
+ /*    this.refreshCorList(this.CourseAuthorId);   */
+    this.refreshCorList(this.service.name);  
+   
     console.log(this.service.name);
+   
   }
 
   addClick(){
-    this.emp={
-      EmployeeId:0,
-      EmployeeetName:"",
-      Department:"",
-      DateOfJoining:"",
-      photoFileName:"anonymous.PNG"
+    this.cor={
+      CourseId:0,
+      CourseName:"",
+      CoursePrice:"",
+      CoursePhotoFileName:"anonymous.PNG",
+      CourseDescription:"",
+      CourseAuthorId:this.service.name
     }
-    this.ModalTitle="افزودن دوره";
-    this.ActivateAddEditEmpComp=true;
+    this.ModalTitle=" افزودن دوره";
+    this.ActivateAddEditCorComp=true;
 
   }
 
   editClick(item: any){
-    this.emp=item;
-    this.ModalTitle="تغییر دوره";
-    this.ActivateAddEditEmpComp=true;
+    this.cor=item;
+    this.ModalTitle="تغییر دوره ";
+    this.ActivateAddEditCorComp=true;
   }
 
-  deleteClick(item: { EmployeeId: any; }){
-    if(confirm('آیا میخواهید این دوره را پاک کنید')){
-      this.service.deleteEmployee(item.EmployeeId).subscribe(data=>{
+  deleteClick(item: { CourseId: any; }){
+    if(confirm('آیا میخواهید این دوره را پاک کنید؟')){
+      this.service.deleteCourse(item.CourseId).subscribe(data=>{
         alert(data.toString());
-        this.refreshEmpList();
+         this.refreshCorList(this.service.name);  
       })
     }
   }
 
   closeClick(){
-    this.ActivateAddEditEmpComp=false;
-    this.refreshEmpList();
+    this.ActivateAddEditCorComp=false;
+      this.refreshCorList(this.service.name);  
   }
 
 
-  refreshEmpList(){
-    this.service.getCorList().subscribe(data=>{
+  refreshCorList(CourseId: any){
+    this.service.getCourseById(CourseId).subscribe(data=>{
       this.CourseList=data;
+      console.log(data)
       this.DepartmentListWithoutFilter=data;
-      this.loadImage();
     });
-    
-
-  }
-  loadImage()
-  {
-    this.PhotoFilePath=this.service.PhotoUrl;
-  }
+  } 
 
   FilterFn(){
     var DepartmentIdFilter = this.DepartmentIdFilter;

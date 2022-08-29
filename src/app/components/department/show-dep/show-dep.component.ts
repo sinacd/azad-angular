@@ -23,6 +23,8 @@ export class ShowDepComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshDepList();
+      
+    console.log(this.service.name);
   }
 
   addClick(){

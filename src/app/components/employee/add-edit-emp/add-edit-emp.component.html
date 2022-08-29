@@ -1,50 +1,94 @@
-<div class="d-flex flex-row bd-highlight mb-3">
+ 
+ 
+ <div class="d-flex flex-row bd-highlight mb-3 rtl">
 
 
-
-
-
-
-<div class="form-froup row" style="width: 60%;">
-
-    <label class="col-sm-2 col-form-label">Employee Name</label>
+<div class="form-froup row" style="width: 40%;">
+  <div class="text-center">
+    <h1>ثبت نام</h1>
+    <h6>  برای آغاز همکاری ابتدا عضو شوید   </h6>
+  </div>
+    <label class="col-sm-2 col-form-label">نام و نام خانوادگی</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="EmployeeName"
-        placeholder="Enter Employee Name">
+        <input type="text" class="form-control" [(ngModel)]="TeacherName"
+        placeholder="نام کامل خود را وارد کنید  ">
     </div>
-    <label class="col-sm-2 col-form-label">Department</label>
-    <div class="col-sm-10">
-    <select name="" id="" [(ngModel)]="Department" class="form-control">
-        <option>--select--</option>
-        <option  *ngFor="let depName of DepartmentsList">
-            {{depName.DepartmentName}}
-        </option>
-        
-    </select>
     
-    </div>
-    <label class="col-sm-2 col-form-label">Employee Name</label>
+    <label class="col-sm-2 col-form-label">شماره موبایل</label>
     <div class="col-sm-10">
-        <input type="date"  [(ngModel)]="DateOfJoining">
+        <input type="text" class="form-control" [(ngModel)]="TeacherPhone"
+        placeholder=" موبایل خود را وارد کنید ">
     </div>
+    
+    <label class="col-sm-2 col-form-label"> آدرس ایمیل </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="TeacherEmail"
+        placeholder=" ایمیل را وارد کنید ">
+    </div>
+  
+    <label class="col-sm-2 col-form-label">پسورد</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="TeacherPassword"
+        placeholder="پسورد را وارد کنید">
+    </div>
+    <button (click)="addEmployee()"  class="btn btn-primary">
+      ثبت نام
+  </button>
+    
 
 
 
 
 </div>
-<div class="ml-3 bd-highlight " style="width: 40%;">
+<!-- <div class="ml-3 bd-highlight " style="width: 40%;">
 <img [src]="PhotoFilePath" height="250px" width="200px" alt="">
 <input type="file" (change)="uploadPhoto($event)" class="mt-2">
 </div>
 
-
+ -->
 
 </div>
-<button (click)="addEmployee()" *ngIf="emp.EmployeeId==0" class="btn btn-primary">
+<!-- <button (click)="addEmployee()"  class="btn btn-primary">
     Add
 </button>
+ -->
 
-<button (click)="updateEmployee()" *ngIf="emp.EmployeeId!=0" class="btn btn-primary">
-    Update
-</button>
 
+   <!--  
+<div class="container rtl ">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="crad">
+        <div class="text-center">
+          <h1>ثبت نام</h1>
+          <h6>  برای آغاز همکاری ابتدا عضو شوید   </h6>
+        </div>
+       
+          <form [formGroup]="loginForm" (keyup)="login()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">نام و نام خانوادگی</label>
+              <input type="text" class="form-control" [(ngModel)]="TeacherName" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">شماره موبایل</label>
+              <input type="number" class="form-control" [(ngModel)]="TeacherPhone" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">ایمیل</label>
+              <input type="email" class="form-control" [(ngModel)]="TeacherEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">رمز</label>
+              <input type="password" class="form-control" [(ngModel)]="TeacherPassword" id="exampleInputPassword1">
+            </div>
+            <button type="submit" (click)="addEmployee()"  class="btn btn-primary">ثبت نام</button>
+          </form>
+       
+      </div>
+    </div>
+  </div>
+</div>
+  -->
