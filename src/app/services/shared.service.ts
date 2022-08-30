@@ -10,9 +10,10 @@ export class SharedService {
 readonly ApiUrl="http://localhost:5000/api";
 readonly PhotoUrl="http://localhost:5000/Photos/";
 name:any;
-loginStat:any;
+loginStat:any=false;
 ass(bass:any){
   this.name= bass
+  this.loginStat= true
 }
 constructor(private http:HttpClient) { }
 

@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit {
         this.aa=this.user;
         /* this.aa=this.user */
        /*  this.id=this.service.name; */
-        this.service.ass(this.user.TeacherId) 
-         /*   this.router.navigate(['dashboard'])  */ 
+        this.service.ass(this.user.TeacherId) ;
+           this.router.navigate(['dashboard'])  
          
       
         }

@@ -11,8 +11,10 @@
             
             <li><a href=""> اخبار<i class="uil uil-arrow-right"></i></a></li>
             <li><a href=""> اطلاعیه<i class="uil uil-arrow-right"></i></a></li>
-            <li><a routerLink="login">  ورود <i class="uil uil-arrow-right"></i></a></li>
-            <li><a routerLink="signup">  همکاری در کمان <i class="uil uil-arrow-right"></i></a></li>
+            <li><a routerLink="login" *ngIf="!this.service.loginStat">   ورود <i class="uil uil-arrow-right"></i></a></li>
+            <li><a routerLink="dashboard" *ngIf="this.service.loginStat">   داشبورد <i class="uil uil-arrow-right"></i></a></li> 
+            <li><a href="index.html"  *ngIf="this.service.loginStat"> خروج <i class="uil uil-arrow-right"></i></a></li>
+            <li><a routerLink="signup" *ngIf="!this.service.loginStat">   همکاری در کمان <i class="uil uil-arrow-right"></i></a></li>
             
         </ul>
     </nav>
@@ -29,8 +31,10 @@
            
               <li><a href=""> اخبار</a></li>
               <li><a href="">اطلاعیه</a></li>
-              <li><a routerLink="login">   ورود  </a></li>
-              <li><a routerLink="signup">   همکاری در کمان  </a></li>
+              <li><a routerLink="login" *ngIf="!this.service.loginStat">   ورود  </a></li>
+              <li><a routerLink="dashboard" *ngIf="this.service.loginStat">   داشبورد  </a></li>
+              <li><a href="index.html"  *ngIf="this.service.loginStat">   خروج  </a></li>
+              <li><a routerLink="signup" *ngIf="!this.service.loginStat">   همکاری در کمان  </a></li>
               
           </ul>
       </nav>
