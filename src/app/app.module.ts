@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ShowCorComponent } from './components/dashboard/show-cor/show-cor.component';
 import { AddEditCorComponent } from './components/dashboard/add-edit-cor/add-edit-cor.component';
+import { SellComponent } from './components/sell/sell.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AddEditCorComponent } from './components/dashboard/add-edit-cor/add-edi
     LoginComponent,
     DashboardComponent,
     ShowCorComponent,
-    AddEditCorComponent
+    AddEditCorComponent,
+    SellComponent
   ],
   imports: [
     BrowserModule,

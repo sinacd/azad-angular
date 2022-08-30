@@ -47,6 +47,7 @@ export class ShowCorComponent implements OnInit {
       CoursePrice:"",
       CoursePhotoFileName:"anonymous.PNG",
       CourseDescription:"",
+      CourseAuthorName:"",
       CourseAuthorId:this.service.name
     }
     this.ModalTitle=" افزودن دوره";

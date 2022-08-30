@@ -1,0 +1,94 @@
+<div class=" rtl">
+    <div class="banner ">
+      <div class="title-bar"> <a routerLink="">صفحه‌اصلی</a>/  خرید دوره</div>
+      <div class="title">
+        <h2>      </h2>
+      </div>
+        <div class="showcase-form card">
+        <h2>
+        خرید دوره های آموزشی 
+        </h2>
+      
+       <form action="" method="post" name="sell"  data-netlify-recaptcha="true" data-netlify="true">
+        <input type="hidden" name="form-name" value="sell">
+        <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+            <div class="form-control">
+              <div class="form-detail">
+                <div>نام<span>*</span></div>
+                <p></p>
+              </div>
+                <input class="in" type="text" name="name"  placeholder="" required>
+                
+            </div>
+            <div class="form-control">
+              <div class="form-detail">
+                <div>نام خانوادگی <span>*</span></div>
+                <p></p>
+              </div>
+              <input class="in" type="text" name="family" placeholder="" required>
+                
+            </div>  
+            <div class="form-control">
+              <div class="form-detail">
+                <div>نام دوره <span>*</span></div>
+                <p></p>
+              </div>
+              <input class="in" [(ngModel)]="Course[0].CourseName" type="text" name="CourseName" readonly placeholder="" required>
+                
+            </div>  
+            <div class="form-control">
+              <div class="form-detail">
+                <div> قیمت دوره <span>*</span></div>
+                <p></p>
+              </div>
+              <input class="in" [(ngModel)]="Course[0].CoursePrice" type="text" name="CoursePrice" readonly placeholder="" required>
+                
+            </div>  
+      
+         
+      <!-- hidden -->     
+<select class="in hidden" name="chapter" id="chapter" >
+<option value="" selected="selected">Please select topic first</option>
+</select>
+
+
+
+
+
+
+            <div class="form-control">
+              <div class="form-detail">
+                <div> شماره موبایل <span>*</span></div>
+                <p>لطفا تمامی اعداد را به انگلیسی وارد کنید</p>
+              </div>
+                <input class="in" type="tel" name="phonenumber" placeholder="" required>
+                
+            </div>  
+           
+            <div class="form-control">
+              <div class="form-detail">
+                <div> ایمیل <span></span></div>
+                <p>آدرس صحیح ایمیل</p>
+              </div>
+                <input class="in" type="email" name="email" placeholder="" >
+                <i class='fas fa-envelope'></i>
+            </div>
+            <div class="form-control">
+              <div class="form-detail">
+                <div> آپلود عکس رسید واریزی <span></span></div>
+                <p>فایل های خود را آپلود کنید</p>
+              </div>
+                <label id="photo-space" for="upload-photo">فایل های خود را برای آپلود اینجا بکشید</label>
+                <input class="hidden" type="file" name="file" id="upload-photo" required>
+    
+            </div>
+            <div data-netlify-recaptcha="true"></div>
+            <input type="submit" value="ارسال" class="btn btn-primary">
+</form>
+    </div>
+  </div>
+</div>

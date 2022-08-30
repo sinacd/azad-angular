@@ -55,9 +55,7 @@ UploadPhoto(val:any){
   return this.http.post(this.ApiUrl+'/Teacher/SaveFile',val);
 }
 
-getAllDepartmentNames():Observable<any[]>{
-  return this.http.get<any[]>(this.ApiUrl+'/Teacher/GetAllDepartmentName');
-}
+
 getCorList():Observable<any[]>{
   return this.http.get<any>(this.ApiUrl+'/Course');
 }
@@ -81,7 +79,12 @@ UploadPhotoCourse(val:any){
 getCourseById(val:any):Observable<any[]>{
   return this.http.get<any[]>(this.ApiUrl+'/Course/'+val);
 }
-
+getCourseByIdCourse(val:any):Observable<any[]>{
+  return this.http.get<any[]>(this.ApiUrl+'/Teacher/'+val);
+}
+getAllDepartmentNames():Observable<any[]>{
+  return this.http.get<any[]>(this.ApiUrl+'/Teacher/GetAllDepartmentName');
+}
 
 
 

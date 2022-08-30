@@ -18,6 +18,7 @@ export class AddEditCorComponent implements OnInit {
   CoursePhotoFileName: string | undefined;
   CoursePhotoFilePath: string | undefined;
   CourseAuthorId: string | undefined;
+  CourseAuthorName: string | undefined;
 
 
   DepartmentsList:any=[];
@@ -35,6 +36,7 @@ export class AddEditCorComponent implements OnInit {
       this.CoursePrice=this.cor.CoursePrice;
       this.CourseDescription=this.cor.CourseDescription;
       this.CourseAuthorId=this.cor.CourseAuthorId;
+      this.CourseAuthorName=this.cor.CourseAuthorName;
       this.CoursePhotoFileName=this.cor.CoursePhotoFileName;
       this.CoursePhotoFilePath=this.service.PhotoUrl+this.CoursePhotoFileName;
       
@@ -47,6 +49,7 @@ export class AddEditCorComponent implements OnInit {
                CoursePhotoFileName:this.CoursePhotoFileName,
                 CourseDescription:this.CourseDescription,
                 CoursePrice:this.CoursePrice,
+                CourseAuthorName:this.CourseAuthorName,
                 CourseAuthorId:this.CourseAuthorId};
      console.log(val)
     this.service.addCourse(val).subscribe(res=>{
@@ -60,6 +63,7 @@ export class AddEditCorComponent implements OnInit {
       CoursePhotoFileName:this.CoursePhotoFileName,
       CoursePrice:this.CoursePrice,
       CourseDescription:this.CourseDescription,
+      CourseAuthorName:this.CourseAuthorName,
       CourseAuthorId:this.CourseAuthorId};
 
     this.service.updateCourse(val).subscribe(res=>{

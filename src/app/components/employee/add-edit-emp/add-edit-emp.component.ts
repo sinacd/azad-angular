@@ -42,13 +42,13 @@ export class AddEditEmpComponent implements OnInit {
     this.service.getAllDepartmentNames().subscribe((data:any)=>{
       this.DepartmentsList=data;
       
-    /*   this.TeacherId=this.emp.TeacherId;
+      this.TeacherId=this.emp.TeacherId;
       this.TeacherName=this.emp.TeacherName;
       this.TeacherPhone=this.emp.TeacherPhone;
       this.TeacherEmail=this.emp.TeacherEmail;
       this.TeacherPassword=this.emp.TeacherPassword;
       this.TeacherPhotoFileName=this.emp.TeacherPhotoFileName;
-      this.PhotoFilePath=this.service.PhotoUrl+this.TeacherPhotoFileName; */
+      this.PhotoFilePath=this.service.PhotoUrl+this.TeacherPhotoFileName; 
       console.log(this.TeacherName);
     });
   }

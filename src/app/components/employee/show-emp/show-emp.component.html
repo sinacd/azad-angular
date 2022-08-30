@@ -54,14 +54,14 @@
     <div class="text rtl">
     <img [src]="PhotoFilePath+dataItem.CoursePhotoFileName" alt="ss">
     <h3 class="title-cl ">  {{dataItem.CourseName}} </h3>
-    <div class="title-cl2 t16"><span class="text-cl t16">مدرس </span>مهندس سهراب عسکرزاده</div>
+    <div class="title-cl2 t16"><span class="text-cl t16">مدرس </span> {{dataItem.CourseAuthorName}} </div>
   
     <p class="text-cl ">{{dataItem.CourseDescription}}</p>
     <h3 class="text-cl">
 
-      برای ثبت نام دوره <a href="page1-2.html" class="title-cl2">اینجا</a> کلیک کنید.
+      برای ثبت نام دوره <a [routerLink]="['/sell/',dataItem.CourseId]" class="title-cl2">اینجا</a> کلیک کنید.
       </h3>
-      
+      <!-- <a [routerLink]="['/artists/',res.id]">{{res.name}}</a> -->
   </div>
     </div>
   
