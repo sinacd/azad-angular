@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,6 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ShowCorComponent } from './components/dashboard/show-cor/show-cor.component';
 import { AddEditCorComponent } from './components/dashboard/add-edit-cor/add-edit-cor.component';
 import { SellComponent } from './components/sell/sell.component';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { SellComponent } from './components/sell/sell.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
